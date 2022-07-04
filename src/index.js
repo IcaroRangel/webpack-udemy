@@ -46,4 +46,4 @@ import Heading from './components/heading/heading';
 
 const heading = new Heading();
 
-heading.create(VERSION);
+heading.create(process.env.API_KEY);
