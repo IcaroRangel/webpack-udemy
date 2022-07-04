@@ -1,1 +1,1 @@
-console.log("Webpack");
+console.log("Uau");
