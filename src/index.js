@@ -3,6 +3,7 @@ import Image from './components/image.js';
 import Button from './components/button.js';
 import Warning from './templates/warning.html';
 import './styles/warning.css';
+import fraseTxt from './files/frase.txt';
 
 const title = new Title();
 const image = new Image();
@@ -28,3 +29,8 @@ console.log(test);
 // Import de HTML
 const body = document.querySelector('body');
 body.innerHTML += Warning;
+
+// Import arquivo de texto
+const frase = fraseTxt;
+
+console.log(frase.toLowerCase());
