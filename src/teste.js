@@ -1,1 +1,4 @@
-console.log('Uau 2');
+import hello from './hello.js';
+
+hello('Icaro');
+hello('Maria');
