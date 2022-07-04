@@ -1,4 +1,0 @@
-import hello from './hello.js';
-
-hello('Icaro');
-hello('Maria');
