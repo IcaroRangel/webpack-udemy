@@ -4,6 +4,7 @@ import Button from './components/button.js';
 import Warning from './templates/warning.html';
 import './styles/warning.css';
 import fraseTxt from './files/frase.txt';
+import description from './files/description.json';
 
 const title = new Title();
 const image = new Image();
@@ -34,3 +35,9 @@ body.innerHTML += Warning;
 const frase = fraseTxt;
 
 console.log(frase.toLowerCase());
+
+// Import JSON
+
+const eu = description;
+
+console.log(eu);
