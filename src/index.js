@@ -46,4 +46,4 @@ import Heading from './components/heading/heading';
 
 const heading = new Heading();
 
-heading.create('Ai calica');
+heading.create(VERSION);
