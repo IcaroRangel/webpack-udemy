@@ -11,7 +11,7 @@ const PATH = {
 };
 
 module.exports = {
-  entry: './src/index.ts?',
+  entry: './src/index.js?',
   output: {
     filename: '[name].[contenthash].js?',
     path: PATH.dist,
@@ -43,17 +43,17 @@ module.exports = {
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
-        test: /\.ts?$/,
-        use: 'ts-loader',
+        test: /\.js?$/,
+        // use: 'ts-loader',
 
         exclude: /(node_modules|bower_components)/,
-        // use: {
-        //   loader: 'babel-loader',
-        //   options: {
-        //     presets: ['@babel/preset-env'],
-        //     plugins: ['@babel/plugin-proposal-object-rest-spread'],
-        //   },
-        // },
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
+            plugins: ['@babel/plugin-proposal-object-rest-spread'],
+          },
+        },
       },
       // {
       //   test: /\.html$/,
@@ -79,9 +79,12 @@ module.exports = {
       VERSION: JSON.stringify('1.0.2'),
       PORT: 8080,
     }),
+    new webpack.ProvidePlugin({
+      _: 'lodash',
+    }),
     new DotenvPlugin(),
   ],
-  resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
-  },
+  // resolve: {
+  //   extensions: ['.tsx', '.ts', '.js'],
+  // },
 };

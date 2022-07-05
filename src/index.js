@@ -81,13 +81,17 @@
 // import ReactDOM from "react-dom';
 // import App from './App';
 
-let color: string = 'blue';
-
-console.log(color);
-
 // ReactDOM.render(
 //   <>
 //     <App />
 //   </>,
 //   document.getElementById('root')
 // );
+
+// let color: string = 'blue';
+
+// console.log(color);
+
+console.log(_.difference([1, 2, 3, 6], [1, 4, 5]));
+
+console.log(_.lastIndexOf([1, 2, 3], 2));
