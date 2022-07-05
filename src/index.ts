@@ -77,13 +77,17 @@
 
 // body.append(p, bacon, div);
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+// import React from 'react';
+// import ReactDOM from "react-dom';
+// import App from './App';
 
-ReactDOM.render(
-  <>
-    <App />
-  </>,
-  document.getElementById('root')
-);
+let color: string = 'blue';
+
+console.log(color);
+
+// ReactDOM.render(
+//   <>
+//     <App />
+//   </>,
+//   document.getElementById('root')
+// );

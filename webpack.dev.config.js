@@ -11,17 +11,15 @@ const PATH = {
 };
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/index.ts?',
   output: {
-    filename: '[name].[contenthash].js',
+    filename: '[name].[contenthash].js?',
     path: PATH.dist,
-    publicPath: '/',
+    // publicPath: '/',
   },
   mode: 'development',
 
   devServer: {
-    // contentBase: PATH.dist,
-    // index: 'index.html',
     historyApiFallback: true,
     port: 8000,
   },
@@ -45,15 +43,17 @@ module.exports = {
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
-        test: /\.js$/,
+        test: /\.ts?$/,
+        use: 'ts-loader',
+
         exclude: /(node_modules|bower_components)/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env'],
-            plugins: ['@babel/plugin-proposal-object-rest-spread'],
-          },
-        },
+        // use: {
+        //   loader: 'babel-loader',
+        //   options: {
+        //     presets: ['@babel/preset-env'],
+        //     plugins: ['@babel/plugin-proposal-object-rest-spread'],
+        //   },
+        // },
       },
       // {
       //   test: /\.html$/,
@@ -68,7 +68,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'public/index.html'),
-      filname: 'index.html',
+      filename: 'index.html',
     }),
 
     new CleanWebpackPlugin(),
@@ -81,4 +81,7 @@ module.exports = {
     }),
     new DotenvPlugin(),
   ],
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js'],
+  },
 };
