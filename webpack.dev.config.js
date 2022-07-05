@@ -15,15 +15,14 @@ module.exports = {
   output: {
     filename: '[name].[contenthash].js',
     path: PATH.dist,
+    publicPath: '/',
   },
   mode: 'development',
 
   devServer: {
     // contentBase: PATH.dist,
     // index: 'index.html',
-    // historyApiFallback: {
-    //   index: 'index.html',
-    // },
+    historyApiFallback: true,
     port: 8000,
   },
 
@@ -46,7 +45,7 @@ module.exports = {
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
-        test: /\.m?js$/,
+        test: /\.js$/,
         exclude: /(node_modules|bower_components)/,
         use: {
           loader: 'babel-loader',
@@ -56,10 +55,10 @@ module.exports = {
           },
         },
       },
-      {
-        test: /\.html$/,
-        use: ['html-loader'],
-      },
+      // {
+      //   test: /\.html$/,
+      //   use: ['html-loader'],
+      // },
       {
         test: /\.txt$/,
         use: ['raw-loader'],
@@ -67,6 +66,11 @@ module.exports = {
     ],
   },
   plugins: [
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'public/index.html'),
+      filname: 'index.html',
+    }),
+
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css',
@@ -76,6 +80,5 @@ module.exports = {
       PORT: 8080,
     }),
     new DotenvPlugin(),
-    new HtmlWebpackPlugin(),
   ],
 };

@@ -57,22 +57,33 @@
 // console.log(x);
 // console.log(y);
 
-import $ from 'jquery';
-import './styles/fonts.css';
-import { library, dom } from '@fortawesome/fontawesome-svg-core';
-import { faBacon } from '@fortawesome/free-solid-svg-icons';
-import 'bootstrap';
-import './styles/index.scss';
+// import $ from 'jquery';
+// import './styles/fonts.css';
+// import { library, dom } from '@fortawesome/fontawesome-svg-core';
+// import { faBacon } from '@fortawesome/free-solid-svg-icons';
+// import 'bootstrap';
+// import './styles/index.scss';
 
-library.add(faBacon);
-dom.watch();
+// library.add(faBacon);
+// dom.watch();
 
-const body = $('body');
+// const body = $('body');
 
-const p = $('<p></p>').text('Loucura').css('color', 'blue');
+// const p = $('<p></p>').text('Loucura').css('color', 'blue');
 
-const bacon = $('<i></i>').addClass('fas fa-bacon');
+// const bacon = $('<i></i>').addClass('fas fa-bacon');
 
-const div = $('<div></div>').text('Alerta').addClass('alert alert-primary');
+// const div = $('<div></div>').text('Alerta').addClass('alert alert-primary');
 
-body.append(p, bacon, div);
+// body.append(p, bacon, div);
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+
+ReactDOM.render(
+  <>
+    <App />
+  </>,
+  document.getElementById('root')
+);
