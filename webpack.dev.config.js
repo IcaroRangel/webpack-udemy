@@ -27,6 +27,7 @@ module.exports = {
   optimization: {
     minimize: true,
     minimizer: [new TerserPlugin()],
+    runtimeChunk: true,
   },
   module: {
     rules: [
@@ -45,7 +46,7 @@ module.exports = {
       {
         test: /\.js?$/,
         // use: 'ts-loader',
-
+        include: path.resolve(__dirname, 'src'),
         exclude: /(node_modules|bower_components)/,
         use: {
           loader: 'babel-loader',
