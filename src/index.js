@@ -58,9 +58,12 @@
 // console.log(y);
 
 import $ from 'jquery';
+import './styles/fonts.css';
 
 const body = $('body');
 
 const p = $('<p></p>').text('Loucura').css('color', 'blue');
 
-body.append(p);
+const h1 = $('<h1></h1>').text('AAAAAA').css('color', 'green');
+
+body.append(p, h1);
