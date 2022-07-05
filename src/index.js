@@ -42,9 +42,17 @@
 
 // console.log(eu);
 
-import Heading from './components/heading/heading';
+// import Heading from './components/heading/heading';
 
-const heading = new Heading();
+// const heading = new Heading();
 
-heading.create(process.env.API_KEY);
-console.log(PORT);
+// heading.create(process.env.API_KEY);
+// console.log(PORT);
+
+import sum from './calc';
+
+const x = sum(1, 2);
+const y = sum(5, x);
+
+console.log(x);
+console.log(y);
