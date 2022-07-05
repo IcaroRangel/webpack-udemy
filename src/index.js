@@ -107,4 +107,19 @@
 
 // sum(10, 10);
 
-console.log('AA');
+function createButton() {
+  const btn = document.createElement('button');
+
+  btn.innerText = 'Botão';
+
+  document.querySelector('#root').appendChild(btn);
+
+  btn.onclick = e =>
+    import('./calc').then(module => {
+      const lazy = module.default;
+
+      lazy();
+    });
+}
+
+createButton();
