@@ -92,15 +92,19 @@
 
 // console.log(color);
 
-import sum from './calc';
+// import sum from './calc';
 
 // console.log(_.difference([1, 2, 3, 6], [1, 4, 5]));
 
 // console.log(_.lastIndexOf([1, 2, 3], 2));
 
-if (module.hot) {
-  module.hot.accept('./calc', () => {
-    console.log('Olha só');
-    console.log(sum(1, 5));
-  });
-}
+// if (module.hot) {
+//   module.hot.accept('./calc', () => {
+//     console.log('Olha só');
+//     sum(1, 5);
+//   });
+// }
+
+// sum(10, 10);
+
+console.log('AA');

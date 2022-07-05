@@ -11,7 +11,11 @@ const PATH = {
 };
 
 module.exports = {
-  entry: './src/index.js?',
+  entry: {
+    index: { import: './src/index.js', dependOn: 'shared' },
+    calc: { import: './src/calc.js', dependOn: 'shared' },
+    shared: 'lodash',
+  },
   output: {
     filename: '[name].[contenthash].js?',
     path: PATH.dist,
