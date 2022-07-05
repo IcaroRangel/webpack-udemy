@@ -21,17 +21,19 @@
     "file-loader": "^6.2.0",
     "html-loader": "^3.1.2",
     "html-webpack-plugin": "^5.5.0",
+    "jquery": "^3.6.0",
     "loader": "^2.1.1",
     "mini-css-extract-plugin": "^2.6.1",
     "node-sass": "^7.0.1",
     "raw-loader": "^4.0.2",
     "sass-loader": "^13.0.2",
     "style-loader": "^3.3.1",
-    "terser-webpack-plugin": "^5.3.3"
+    "terser-webpack-plugin": "^5.3.3",
+    "webpack-dev-server": "^4.9.3"
   },
   "scripts": {
     "build": "webpack",
-    "dev": "webpack --config webpack.dev.config.js",
+    "dev": "webpack serve --config webpack.dev.config.js",
     "prod": "webpack --config webpack.prod.config.js"
   }
 }

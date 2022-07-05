@@ -6,13 +6,27 @@ const DotenvPlugin = require('dotenv-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
+const PATH = {
+  dist: path.resolve(__dirname, 'dist'),
+};
+
 module.exports = {
   entry: './src/index.js',
   output: {
     filename: '[name].[contenthash].js',
-    path: path.resolve(__dirname, 'dist'),
+    path: PATH.dist,
   },
   mode: 'development',
+
+  devServer: {
+    // contentBase: PATH.dist,
+    // index: 'index.html',
+    // historyApiFallback: {
+    //   index: 'index.html',
+    // },
+    port: 8000,
+  },
+
   optimization: {
     minimize: true,
     minimizer: [new TerserPlugin()],
@@ -62,6 +76,9 @@ module.exports = {
       PORT: 8080,
     }),
     new DotenvPlugin(),
-    new HtmlWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      title: 'Webpack',
+    }),
   ],
 };

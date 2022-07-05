@@ -49,10 +49,18 @@
 // heading.create(process.env.API_KEY);
 // console.log(PORT);
 
-import sum from './calc';
+// import sum from './calc';
 
-const x = sum(1, 2);
-const y = sum(5, x);
+// const x = sum(32, 2);
+// const y = sum(5, x);
 
-console.log(x);
-console.log(y);
+// console.log(x);
+// console.log(y);
+
+import $ from 'jquery';
+
+const body = $('body');
+
+const p = $('<p></p>').text('Loucura').css('color', 'blue');
+
+body.append(p);

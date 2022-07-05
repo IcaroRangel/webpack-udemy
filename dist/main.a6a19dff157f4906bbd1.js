@@ -1,1 +1,0 @@
-(()=>{"use strict";const o=function(o,n){return o+n};var n=o(1,2),c=o(5,n);console.log(n),console.log(c)})();
