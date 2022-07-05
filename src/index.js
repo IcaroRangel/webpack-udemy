@@ -61,6 +61,8 @@ import $ from 'jquery';
 import './styles/fonts.css';
 import { library, dom } from '@fortawesome/fontawesome-svg-core';
 import { faBacon } from '@fortawesome/free-solid-svg-icons';
+import 'bootstrap';
+import './styles/index.scss';
 
 library.add(faBacon);
 dom.watch();
@@ -69,6 +71,8 @@ const body = $('body');
 
 const p = $('<p></p>').text('Loucura').css('color', 'blue');
 
-const h1 = $('<i></i>').addClass('fas fa-bacon');
+const bacon = $('<i></i>').addClass('fas fa-bacon');
 
-body.append(p, h1);
+const div = $('<div></div>').text('Alerta').addClass('alert alert-primary');
+
+body.append(p, bacon, div);
