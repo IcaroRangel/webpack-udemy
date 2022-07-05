@@ -76,9 +76,6 @@ module.exports = {
       PORT: 8080,
     }),
     new DotenvPlugin(),
-    new HtmlWebpackPlugin({
-      filename: 'index.html',
-      title: 'Webpack',
-    }),
+    new HtmlWebpackPlugin(),
   ],
 };
